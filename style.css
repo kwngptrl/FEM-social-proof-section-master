@@ -51,17 +51,17 @@ body {
 
 
 /*      RATED STARS      */
-.rating {
+/* .rating {
     outline: 2px green solid;
-    /* padding: 1rem; */
+    padding: 1rem;
     width: 100%;
     max-width: 327px;
-    /* margin: 0 auto; */
-}
+    margin: 0 auto;
+} */
 
 .rating_card {
-    
-    /* width: 100%; */
+    width: 100%;
+    max-width: 327px;
     display: flex;
     flex-direction: column;
     gap: .5em;
@@ -69,26 +69,22 @@ body {
     border-radius: .5rem;
     background-color: var(--light-grayish-magenta);
     padding: .7rem;
+    margin: 0 auto;
     margin-bottom: 1rem;
-    align-items: center;
 }
 
 .stars {
     width: 6.7rem;
     height: 1.2rem;
-    /* background-color: aqua; */
     background-image: url(./images/icon-star.svg);
     background-repeat: space;
     overflow: hidden;
     margin: .5rem auto;
-    
 }
 
-p {
-    /* display: inline; */
+.rating_card > p {
     font-weight: 700;
     color: var(--primary-very-dark-magenta);
-    /* background-color: orange; */
     text-align: center;
 }
 
@@ -112,12 +108,12 @@ p {
 .testimonials {
     display: grid;
     place-content: center;
-    background-color: var(--dark-grayis-magenta);
+    /* background-color: var(--dark-grayis-magenta); */
     /* height: 100vh;  */
     gap: 1rem;
     width: 100%;
     max-width: 400px;
-    margin: 0 auto;   /* FF inspector shows grid overflow if this is has ONE fixed value like 1rem */
+    margin: 0 auto;   /* FF inspector shows grid overflow if this has ONE fixed value like 1rem */
 }
 
 .card {
@@ -127,7 +123,7 @@ p {
     max-width: 327px;
     background-color: var(--primary-very-dark-magenta);
     
-
+    /* CONTENT INSIDE THE CARD */
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     padding: 1.5em 1em 1em;
@@ -141,22 +137,18 @@ p {
     height: 3.5em;
     width: 3.5em;
     padding: .5em;
-    
 }
-
 
 .name,
 .category,
 .review {
-    /* grid-column: 2/3; */
     color: var(--white);
     text-align: start;
 }
+
 .category {
-    /* grid-column: 2/3; */
     color: var(--primary-soft-pink);
 }
-
 
 .review {
     grid-column: 1/4;
