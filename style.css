@@ -15,6 +15,11 @@
     --white: hsl(0, 0%, 100%);
 }
 
+/* bg-pattern-bottom-desktop 1085x673px */
+/* bg-pattern-top-desktop 584x362px */
+/* bg-pattern-bottom-mobile 375x503px */
+/* bg-pattern-top-mobile 374x232px */
+
 html {
     font-size: 15px;
 }
@@ -23,11 +28,13 @@ body {
     font-family: 'League Spartan', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    display: grid;
-    place-content: center;
+    
+    
 }
 
 .container {
+    display: grid;
+    place-content: center;
     background-color: gold;
     /* height: 100vh; */
     width: 100%;
@@ -36,28 +43,32 @@ body {
 
 .header {
     color: var(--primary-very-dark-magenta);
-    margin: 2rem;
+    font-size: 1.7rem;
+    letter-spacing: -.05em;
+    /* margin: 2rem 3rem; */
+    /* computed subtracting the margin above with the help of devtools */
+    width: 19rem; 
     text-align: center;
-    font-size: 1.5rem;
+    margin: 2rem auto;
+    background-color: aqua;
 }
 
 .description p {
     color: var(--dark-grayis-magenta);
     text-align: center;
-    margin: 2rem;
-    line-height: 1.2rem;
+    /* margin: 1.2rem; */
+    /* from margin above, in devtools p width is computed below */
+    width: 22.6rem;
+    /* explore clamp? for width */
+    margin: 1rem auto;
+    font-size: 1.2rem;
     font-weight: 500;
+    line-height: 1.2rem;
+    background-color: chartreuse;
 }
 
 
 /*      RATED STARS      */
-/* .rating {
-    outline: 2px green solid;
-    padding: 1rem;
-    width: 100%;
-    max-width: 327px;
-    margin: 0 auto;
-} */
 
 .rating_card {
     width: 100%;
@@ -65,12 +76,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: .5em;
-    border: 2px red solid;
+    /* border: 2px red solid; */
     border-radius: .5rem;
     background-color: var(--light-grayish-magenta);
-    padding: .7rem;
-    margin: 0 auto;
-    margin-bottom: 1rem;
+    padding: 1rem;
 }
 
 .stars {
@@ -79,7 +88,7 @@ body {
     background-image: url(./images/icon-star.svg);
     background-repeat: space;
     overflow: hidden;
-    margin: .5rem auto;
+    margin: 0 auto;
 }
 
 .rating_card > p {
@@ -88,33 +97,19 @@ body {
     text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-  .rating_card {
-    max-width: 440px;
-    flex-direction: row;
-    align-items: center;
-    /* padding: 1rem; */
-  }
-
-  .stars {
-    margin: auto 2rem;
-  }
-
-}
-
 /*      END OF RATED STARS      */
 
-/*          TESTIMONIALS         */
-.testimonials {
-    display: grid;
-    place-content: center;
-    /* background-color: var(--dark-grayis-magenta); */
-    /* height: 100vh;  */
-    gap: 1rem;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;   /* FF inspector shows grid overflow if this has ONE fixed value like 1rem */
+/*      common between rating_card and card     */
+/*      can be removed once grid is implemented */
+.rating_card,
+.card {
+    margin: 0 auto;     /* centers each card in 'main' container */
+    margin-bottom: 1rem;    /* spaces each card. Can be removed if grid is fully implemented */
 }
+
+/*          TESTIMONIALS         */
+/* .card in mobile 327x248px */
+/* .card in desktop 350x234px */
 
 .card {
     border: 1px green solid;
@@ -128,7 +123,6 @@ body {
     grid-template-columns: 1fr 2fr 1fr;
     padding: 1.5em 1em 1em;
     line-height: 1.25rem;
-    
 }
 
 .card > img {
@@ -159,8 +153,29 @@ body {
     align-self: center;
 }
 
-/* .card in mobile 327x248px */
-/* .card in desktop 350x234px */
+
+
+
+
+
+@media screen and (min-width: 768px) {
+
+    .container {
+        max-width: unset;
+    }
+
+    .rating_card {
+        max-width: 440px;
+        flex-direction: row;
+        align-items: center;
+        /* padding: 1rem; */
+    }
+
+    .stars {
+        margin: auto 2rem;
+    }
+
+}
 
 .attribution {
     margin-top: 1rem;
