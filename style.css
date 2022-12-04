@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* primary */
+    --primary-very-dark-magenta: hsl(300, 43%, 22%);
+    --primary-soft-pink: hsl(333, 80%, 67%);
+
+    /* neutral */
+    --dark-grayis-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    background-color: gold;
+    /* height: 100vh; */
+    width: 100%;
+    max-width: 375px;
+}
+
+.header {
+    color: var(--primary-very-dark-magenta);
+    margin: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.description p {
+    color: var(--dark-grayis-magenta);
+    text-align: center;
+    margin: 2rem;
+    line-height: 1.2rem;
+    font-weight: 500;
+}
+
+
+/*      RATED STARS      */
+.rating {
+    outline: 2px green solid;
+    /* padding: 1rem; */
+    width: 100%;
+    max-width: 327px;
+    /* margin: 0 auto; */
+}
+
+.rating_card {
+    
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    border: 2px red solid;
+    border-radius: .5rem;
+    background-color: var(--light-grayish-magenta);
+    padding: .7rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.stars {
+    width: 6.7rem;
+    height: 1.2rem;
+    /* background-color: aqua; */
+    background-image: url(./images/icon-star.svg);
+    background-repeat: space;
+    overflow: hidden;
+    margin: .5rem auto;
+    
+}
+
+p {
+    /* display: inline; */
+    font-weight: 700;
+    color: var(--primary-very-dark-magenta);
+    /* background-color: orange; */
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .rating_card {
+    max-width: 440px;
+    flex-direction: row;
+    align-items: center;
+    /* padding: 1rem; */
+  }
+
+  .stars {
+    margin: auto 2rem;
+  }
+
+}
+
+/*      END OF RATED STARS      */
+
+/*          TESTIMONIALS         */
+.testimonials {
+    display: grid;
+    place-content: center;
+    background-color: var(--dark-grayis-magenta);
+    /* height: 100vh;  */
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;   /* FF inspector shows grid overflow if this is has ONE fixed value like 1rem */
+}
+
+.card {
+    border: 1px green solid;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 327px;
+    background-color: var(--primary-very-dark-magenta);
+    
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 1.5em 1em 1em;
+    line-height: 1.25rem;
+    
+}
+
+.card > img {
+    border-radius: 50%;
+    place-self: center;
+    height: 3.5em;
+    width: 3.5em;
+    padding: .5em;
+    
+}
+
+
+.name,
+.category,
+.review {
+    /* grid-column: 2/3; */
+    color: var(--white);
+    text-align: start;
+}
+.category {
+    /* grid-column: 2/3; */
+    color: var(--primary-soft-pink);
+}
+
+
+.review {
+    grid-column: 1/4;
+    padding: 1em;
+}
+
+.subgrid {
+    align-self: center;
+}
+
+/* .card in mobile 327x248px */
+/* .card in desktop 350x234px */
+
+.attribution {
+    margin-top: 1rem;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+    
