@@ -1,8 +1,10 @@
+
+/*  THIS IS JUST HERE TO PRESERVE A WORKING COPY */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px red solid;
 }
 
 :root {
@@ -30,40 +32,31 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     
+    
 }
-.forBG {
-    background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
-    background-repeat: no-repeat , no-repeat;
-    background-position: top left, bottom right;
-    background-color: var(--white);
-}
+
 .container {
-    width: 100%;
-    /* max-width: 375px; */
     display: grid;
-    /* place-content: center; */
-    gap: 1rem;
+    place-content: center;
+    background-color: gold;
+    /* height: 100vh; */
+    width: 100%;
+    max-width: 375px;
 }
 
-.headline {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.heading {
+.header {
     color: var(--primary-very-dark-magenta);
-    font-size: 2rem;
+    font-size: 1.7rem;
     letter-spacing: -.05em;
     /* margin: 2rem 3rem; */
     /* computed subtracting the margin above with the help of devtools */
-    width: 15rem; 
+    width: 19rem; 
     text-align: center;
     margin: 2rem auto;
     background-color: aqua;
 }
 
-.description {
+.description p {
     color: var(--dark-grayis-magenta);
     text-align: center;
     /* margin: 1.2rem; */
@@ -80,18 +73,9 @@ body {
 
 /*      RATED STARS      */
 
-.rating {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 0 auto;
+.rating_card {
     width: 100%;
     max-width: 327px;
-}
-
-.rating_card {
-    /* width: 100%;
-    max-width: 327px; */
     display: flex;
     flex-direction: column;
     gap: .5em;
@@ -103,7 +87,6 @@ body {
 
 .stars {
     width: 6.7rem;
-    min-width: 6.7rem;
     height: 1.2rem;
     background-image: url(./images/icon-star.svg);
     background-repeat: space;
@@ -117,18 +100,19 @@ body {
     text-align: center;
 }
 
-
 /*      END OF RATED STARS      */
+
+/*      common between rating_card and card     */
+/*      can be removed once grid is implemented */
+.rating_card,
+.card {
+    margin: 0 auto;     /* centers each card in 'main' container */
+    margin-bottom: 1rem;    /* spaces each card. Can be removed if grid is fully implemented */
+}
 
 /*          TESTIMONIALS         */
 /* .card in mobile 327x248px */
 /* .card in desktop 350x234px */
-.testimonials {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 0 auto;
-}
 
 .card {
     border: 1px green solid;
@@ -173,98 +157,26 @@ body {
 }
 
 
-@media screen and (min-width: 768px) {
 
-    .forBG {
-        background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
-        /* padding: 5rem 5rem; */
-        /* display: grid; */
-        /* grid-template-columns: 500px 500px; */
-        /* grid-template-rows: repeat(3, 1fr); */
-        background-attachment: fixed;
-    }
+
+
+
+@media screen and (min-width: 768px) {
 
     .container {
         max-width: unset;
-        /* place-content: unset; */
-        height: 100vh;
-        display: grid;
-        place-content: center;
-        grid-template-areas: 
-            "heading heading . rating rating rating"
-            "card1 card1 card2 card2 card3 card3";
-        grid-template-columns: repeat(6, 175px);
-        row-gap: 5rem;
-    }
-
-    .headline {
-        grid-area: heading;
-        width: max-content;
-    }
-
-    .heading {
-        width: 15rem;
-        font-size: 2.5rem;
-    }
-
-    .description {
-        width: 30rem;        
-    }
-
-    .heading,
-    .description {
-        text-align: left;
-        margin: unset;
-        justify-self: center;
-    }
-
-    .rating {
-        place-self: center;
-        grid-area: rating;
-        max-width: 440px;
-        margin-top: 2rem;
     }
 
     .rating_card {
-        width: 100%;
-        /* max-width: 440px; */
+        max-width: 440px;
         flex-direction: row;
-        /* align-items: center; */
+        align-items: center;
         /* padding: 1rem; */
-        grid-column: 3/5;
     }
 
-    .rating_card:nth-child(2) {
-        margin-left: 2em;
-    }
-    .rating_card:nth-child(3) {
-        margin-left: 4em;
-    }
     .stars {
         margin: auto 2rem;
     }
-
-    .testimonials {
-        display: contents;
-    }
-
-    .testimonials > .card {
-        max-width: 350px;
-        justify-self: center;
-        height: max-content;
-    }
-
-    .card:nth-child(1) {
-        grid-area: card1;
-    }
-    .card:nth-child(2) {
-        grid-area: card2;
-        margin-top: 1em;
-    }
-    .card:nth-child(3) {
-        grid-area: card3;
-        margin-top: 2em;
-    }  
 
 }
 
