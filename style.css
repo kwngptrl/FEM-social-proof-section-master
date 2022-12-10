@@ -43,23 +43,29 @@ body {
     display: grid;
     /* place-content: center; */
     gap: 1rem;
+    
 }
 
 .headline {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
+    padding-block: 3rem 2rem;
 }
 
 .heading {
     color: var(--primary-very-dark-magenta);
-    font-size: 2rem;
-    letter-spacing: -.05em;
+    /* font-size: 2rem; */
+    font-size: clamp(2rem, (1rem + 2.6vw), 2.75rem);
+    letter-spacing: -.03em;
     /* margin: 2rem 3rem; */
     /* computed subtracting the margin above with the help of devtools */
-    width: 15rem; 
+    /* width: 20rem;  */
+    width: clamp(15rem, (2rem + 17vw), 25rem);    
+    line-height: .9em;
+    /* width: max(15vw, 15rem); */
     text-align: center;
-    margin: 2rem auto;
+    margin: 0 auto;
     background-color: aqua;
 }
 
@@ -68,13 +74,14 @@ body {
     text-align: center;
     /* margin: 1.2rem; */
     /* from margin above, in devtools p width is computed below */
-    width: 22.6rem;
+    /* width: 22.6rem; */
+    width: max(24vw, 22.6rem);
     /* explore clamp? for width */
-    margin: 1rem auto;
+    margin: 0 auto;
     font-size: 1.2rem;
     font-weight: 500;
-    line-height: 1.2rem;
-    background-color: chartreuse;
+    line-height: 1.5rem;
+    /* background-color: chartreuse; */
 }
 
 
@@ -87,6 +94,7 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 327px;
+    padding-block-end: 2rem;
 }
 
 .rating_card {
@@ -94,11 +102,12 @@ body {
     max-width: 327px; */
     display: flex;
     flex-direction: column;
-    gap: .5em;
+    gap: 1em;
     /* border: 2px red solid; */
     border-radius: .5rem;
     background-color: var(--light-grayish-magenta);
     padding: 1rem;
+    
 }
 
 .stars {
@@ -139,6 +148,7 @@ body {
     
     /* CONTENT INSIDE THE CARD */
     display: grid;
+    gap: 1rem;
     grid-template-columns: 1fr 2fr 1fr;
     padding: 1.5em 1em 1em;
     line-height: 1.25rem;
@@ -203,25 +213,25 @@ body {
     }
 
     .heading {
-        width: 15rem;
-        font-size: 2.5rem;
+        /* width: 15rem; */
+        /* font-size: 2.5rem; */
     }
 
     .description {
-        width: 30rem;        
+        /* width: 30rem; */        
     }
 
     .heading,
     .description {
         text-align: left;
         margin: unset;
-        justify-self: center;
+        /* justify-self: center; */ /* no effect? in dev tools */
     }
 
     .rating {
         place-self: center;
         grid-area: rating;
-        max-width: 440px;
+        max-width: 430px;
         margin-top: 2rem;
     }
 
@@ -235,10 +245,10 @@ body {
     }
 
     .rating_card:nth-child(2) {
-        margin-left: 2em;
+        margin-left: 1.8em;
     }
     .rating_card:nth-child(3) {
-        margin-left: 4em;
+        margin-left: 3.8em;
     }
     .stars {
         margin: auto 2rem;
