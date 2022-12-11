@@ -31,7 +31,6 @@ body {
     background-position: top left, bottom right;
     background-size: auto, 100%;
     background-color: var(--white);
-    background-blend-mode: multiply;
 }
 .container {
     width: 100%;
@@ -156,18 +155,42 @@ body {
 
 .review {
     grid-column: 1/4;
-    padding: 1em;
+    padding: 1rem;
 }
 
 .subgrid {
     align-self: center;
 }
 
-@media screen and (min-width: 1160px) {
-
+@media screen and (min-width: 768px) {
+    
     .forBG {
         background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
         background-position: top left, bottom right;
+    }
+
+    .rating {
+        max-width: 430px;
+        margin-top: 2rem;
+    }
+
+    .rating_card {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .rating_card > p {
+        margin: auto 0;
+    }
+
+    .stars {
+        margin: auto 2rem;
+    }
+}
+
+@media screen and (min-width: 1160px) {
+
+    .forBG {
         background-size: auto, 70%;
     }
 
@@ -198,26 +221,20 @@ body {
     .rating {
         place-self: center;
         grid-area: rating;
-        max-width: 430px;
-        margin-top: 2rem;
     }
 
     .rating_card {
-        width: 100%;
-        flex-direction: row;
         grid-column: 3/5;
     }
 
     .rating_card:nth-child(2) {
         margin-left: 1.8em;
     }
+
     .rating_card:nth-child(3) {
         margin-left: 3.8em;
     }
-    .stars {
-        margin: auto 2rem;
-    }
-
+    
     .testimonials {
         display: contents;
     }
