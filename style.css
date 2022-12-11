@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px red solid;
 }
 
 :root {
@@ -15,11 +14,6 @@
     --light-grayish-magenta: hsl(300, 24%, 96%);
     --white: hsl(0, 0%, 100%);
 }
-
-/* bg-pattern-bottom-desktop 1085x673px */
-/* bg-pattern-top-desktop 584x362px */
-/* bg-pattern-bottom-mobile 375x503px */
-/* bg-pattern-top-mobile 374x232px */
 
 html {
     font-size: 15px;
@@ -35,15 +29,14 @@ body {
     background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
     background-repeat: no-repeat , no-repeat;
     background-position: top left, bottom right;
+    background-size: auto, 100%;
     background-color: var(--white);
+    background-blend-mode: multiply;
 }
 .container {
     width: 100%;
-    /* max-width: 375px; */
     display: grid;
-    /* place-content: center; */
     gap: 1rem;
-    
 }
 
 .headline {
@@ -54,38 +47,32 @@ body {
 }
 
 .heading {
-    color: var(--primary-very-dark-magenta);
-    /* font-size: 2rem; */
+    /* font-size: starts at 2rem for mobile, increases until at desktop mode is 2.75rem; */
     font-size: clamp(2rem, (1rem + 2.6vw), 2.75rem);
     letter-spacing: -.03em;
-    /* margin: 2rem 3rem; */
-    /* computed subtracting the margin above with the help of devtools */
-    /* width: 20rem;  */
-    width: clamp(15rem, (2rem + 17vw), 25rem);    
     line-height: .9em;
-    /* width: max(15vw, 15rem); */
-    text-align: center;
-    margin: 0 auto;
-    background-color: aqua;
+    color: var(--primary-very-dark-magenta);
+    /* width: starts at 15rem for mobile, increases and settles at 25rem in desktop momde  */
+    width: clamp(15rem, (2rem + 17vw), 25rem);
 }
 
 .description {
-    color: var(--dark-grayis-magenta);
-    text-align: center;
-    /* margin: 1.2rem; */
-    /* from margin above, in devtools p width is computed below */
-    /* width: 22.6rem; */
-    width: max(24vw, 22.6rem);
-    /* explore clamp? for width */
-    margin: 0 auto;
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.5rem;
-    /* background-color: chartreuse; */
+    color: var(--dark-grayis-magenta);
+    /* width: increases above 1400px, limited to 22.6rem below that */
+    width: max(24vw, 22.6rem);
+    
 }
 
+.heading,
+.description {
+    text-align: center;
+    margin: 0 auto;
+}
 
-/*      RATED STARS      */
+/*    STAR RATING     */
 
 .rating {
     display: flex;
@@ -98,16 +85,12 @@ body {
 }
 
 .rating_card {
-    /* width: 100%;
-    max-width: 327px; */
     display: flex;
     flex-direction: column;
     gap: 1em;
-    /* border: 2px red solid; */
     border-radius: .5rem;
     background-color: var(--light-grayish-magenta);
     padding: 1rem;
-    
 }
 
 .stars {
@@ -125,13 +108,12 @@ body {
     color: var(--primary-very-dark-magenta);
     text-align: center;
 }
+/*    END OF STAR RATING     */
 
+/*              TESTIMONIALS               */
+/* .card in mobile 327x248px  (estimate)   */
+/* .card in desktop 350x234px (estimate)   */
 
-/*      END OF RATED STARS      */
-
-/*          TESTIMONIALS         */
-/* .card in mobile 327x248px */
-/* .card in desktop 350x234px */
 .testimonials {
     display: flex;
     flex-direction: column;
@@ -140,7 +122,6 @@ body {
 }
 
 .card {
-    border: 1px green solid;
     border-radius: 1rem;
     width: 100%;
     max-width: 327px;
@@ -150,16 +131,16 @@ body {
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr 2fr 1fr;
-    padding: 1.5em 1em 1em;
+    padding: 1.5rem 1rem 1rem;
     line-height: 1.25rem;
 }
 
 .card > img {
     border-radius: 50%;
     place-self: center;
-    height: 3.5em;
-    width: 3.5em;
-    padding: .5em;
+    height: 3.5rem;
+    width: 3.5rem;
+    padding: .5rem;
 }
 
 .name,
@@ -182,21 +163,16 @@ body {
     align-self: center;
 }
 
-
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1160px) {
 
     .forBG {
         background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
-        /* padding: 5rem 5rem; */
-        /* display: grid; */
-        /* grid-template-columns: 500px 500px; */
-        /* grid-template-rows: repeat(3, 1fr); */
-        background-attachment: fixed;
+        background-position: top left, bottom right;
+        background-size: auto, 70%;
     }
 
     .container {
         max-width: unset;
-        /* place-content: unset; */
         height: 100vh;
         display: grid;
         place-content: center;
@@ -210,22 +186,13 @@ body {
     .headline {
         grid-area: heading;
         width: max-content;
-    }
-
-    .heading {
-        /* width: 15rem; */
-        /* font-size: 2.5rem; */
-    }
-
-    .description {
-        /* width: 30rem; */        
+        padding-block-start: 2rem;
     }
 
     .heading,
     .description {
         text-align: left;
         margin: unset;
-        /* justify-self: center; */ /* no effect? in dev tools */
     }
 
     .rating {
@@ -237,10 +204,7 @@ body {
 
     .rating_card {
         width: 100%;
-        /* max-width: 440px; */
         flex-direction: row;
-        /* align-items: center; */
-        /* padding: 1rem; */
         grid-column: 3/5;
     }
 
@@ -267,10 +231,12 @@ body {
     .card:nth-child(1) {
         grid-area: card1;
     }
+
     .card:nth-child(2) {
         grid-area: card2;
         margin-top: 1em;
     }
+
     .card:nth-child(3) {
         grid-area: card3;
         margin-top: 2em;
