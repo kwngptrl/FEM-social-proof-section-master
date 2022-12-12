@@ -10,7 +10,7 @@
     --primary-soft-pink: hsl(333, 80%, 67%);
 
     /* neutral */
-    --dark-grayis-magenta: hsl(303, 10%, 53%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
     --light-grayish-magenta: hsl(300, 24%, 96%);
     --white: hsl(0, 0%, 100%);
 }
@@ -51,7 +51,7 @@ body {
     letter-spacing: -.03em;
     line-height: .9em;
     color: var(--primary-very-dark-magenta);
-    /* width: starts at 15rem for mobile, increases and settles at 25rem in desktop momde  */
+    /* width: starts at 15rem for mobile, increases and settles at 25rem in desktop mode  */
     width: clamp(15rem, (2rem + 17vw), 25rem);
 }
 
@@ -59,7 +59,7 @@ body {
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.5rem;
-    color: var(--dark-grayis-magenta);
+    color: var(--dark-grayish-magenta);
     /* width: increases above 1400px, limited to 22.6rem below that */
     width: max(24vw, 22.6rem);
     
@@ -197,7 +197,6 @@ body {
     .container {
         max-width: unset;
         height: 100vh;
-        display: grid;
         place-content: center;
         grid-template-areas: 
             "heading heading . rating rating rating"
@@ -242,6 +241,7 @@ body {
     .testimonials > .card {
         max-width: 350px;
         justify-self: center;
+        /* height needs this so that the cards' bottoms do not line up  */
         height: max-content;
     }
 
