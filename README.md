@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution URL here](https://github.com/kwngptrl/FEM-social-proof-section-master)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
@@ -75,7 +75,6 @@ Backgrounds were a bit tricky for me, here are some resources I found:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/kwngptrl)
 
 ## Acknowledgments
