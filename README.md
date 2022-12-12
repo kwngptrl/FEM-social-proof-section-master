@@ -75,7 +75,7 @@ Backgrounds were a bit tricky for me, here are some resources I found:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/kwngptrl)
+- Frontend Mentor - [@Wannacode](https://www.frontendmentor.io/profile/kwngptrl)
 
 ## Acknowledgments
 
