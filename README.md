@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution URL here](https://github.com/kwngptrl/FEM-social-proof-section-master)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live site URL here](https://kwngptrl.github.io/FEM-social-proof-section-master/)
 
 ## My process
 
@@ -51,17 +51,17 @@ Users should be able to:
 
 This project is the first one where I had to use CSS grid. While grid was easy, I had an unexpected hiccup. Despite using grid-areas and the . (dot) to identify no-go areas, one of the testimonial cards kept going into the area between the title and the star ratings. It had to be forced into its place by using an nth-child(1) selector.
 
-My progress was delayed by my confusion with background-size. The top-left and bottom-right svgs kept colliding with each other as the viewport was being resized. In the end, I had to settle with a slightly smaller bottom-right svg.
+My progress was delayed by my confusion with background-size. The top-left and bottom-right SVGs kept colliding with each other as the viewport was being resized. In the end, I had to settle with a slightly smaller bottom-right svg.
 
 This project is my first attempt to use clamp and max() with vw units for responsiveness as the viewport was being dynamically resized. I only applied it with the title and description section, as doing it with the cards seem too much at this point. It did eliminate/reduce some code in the media queries, although I did found it hard to compute. A lot of number plugging and googling/reading was required.
 
-Also, this project made me scratch my head a bit. In the testimonial cars, the quotes are not the regular " quotes. They seem to be the “ and ” with a space after and before, and I could not find anything on how to make it look that way with plain CSS. I didn't want to modify the HTML, since it wasn't like that to begin with. If anyone has any info I'd like to know how you did it.
+Also, this project made me scratch my head a bit. In the testimonial cards, the quotes are not the regular " quotes. They seem to be the “ and ” with a space after and before, and I could not find anything on how to make it look that way with plain CSS. I didn't want to modify the HTML, since it wasn't like that to begin with. If anyone has any info I'd like to know how you did it.
 
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
-Grid will definitely be used much more going forward, especially with more complex layouts. I also want to address reesponsiveness with use of min(), max(), and clamp more, although browser backwards compatibility is a concern. But older browsers are used less and less these days.
+Grid will definitely be used much more going forward, especially with more complex layouts. I also want to address responsiveness with use of min(), max(), and clamp more, although browser backwards compatibility is a concern. But older browsers are used less and less these days.
 
 ### Useful resources
 
